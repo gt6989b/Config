@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+mkfifo /tmp/tmfilexxxx
+
+echo "(my_function "/tmp/tmpfilexxxx" $1 $2 ...)" >/tmp/emacs-tmp.el
+
+emacs -batch -l my_functions.el -l /tmp/emacs-tmp.el
+
+cat pipe
