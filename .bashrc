@@ -58,9 +58,9 @@ fi
 LPDEST=???
 LPCOLOR=???
 
-http_proxy=http://approxy.jpmchase.net:8080
-https_proxy=http://approxy.jpmchase.net:8080
-EDITOR="emacs -nw"
+http_proxy=http://alpext11.proxy.corporate.ge.com:80
+https_proxy=http://alpext11.proxy.corporate.ge.com:80
+#EDITOR="emacs -nw"
 LESS='-rFM'
 PAGER='less -rFM'
 export http_proxy https_proxy EDITOR LESS PAGER
@@ -96,7 +96,9 @@ else
 fi
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    if [ "$TERM" = "cygwin" ]; then
+        color_prompt=yes
+    elif [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
         # We have color support; assume it's compliant with Ecma-48
         # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
         # a case would tend to support setf rather than setaf.)
