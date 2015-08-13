@@ -7,15 +7,12 @@
 ## Fits a set of probabilistic distributions to a sample, optimizing their    ##
 ## parameters using maximum likelihood. The results are ranked using the      ##
 ## Kolmogorov-Smirnov statistic.                                              ##
-##                                                                            ##
-## $URL: https://trstwprsvnapv01.treasury.corp.ge.com/svn/Treasury/QUANTS%20GROUP/Branches/Dima/mdm0/DistrFit/distrFit.py $
-## $Id: distrFit.py 24575 2015-07-06 11:41:50Z 212361829 $                    ##
 ##----------------------------------------------------------------------------##
 
-from datetime         import datetime as dt
-from dateTimeUtils    import dtFmtLog
-from logUtils         import setupLog
-from Maths.statistics import DistributionFitter
+from datetime          import datetime as dt
+from Calendar.common   import dtFmtLog
+from Utils.logUtils    import setupLog
+from Maths.statistics  import DistributionFitter
 
 import logging, os, sys
 
