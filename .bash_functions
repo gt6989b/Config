@@ -86,3 +86,13 @@ function svnup()
            ;;
     esac
 }
+
+function tree()
+{
+    if [[ "$1" == "" ]]; then
+        TreePath=.
+    else
+        TreePath=$1
+    fi
+    ls -R $TreePath | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+}
